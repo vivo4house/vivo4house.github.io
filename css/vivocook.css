@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+
+/* --------------------------------------------------------------*/
+/* Pour la page principale                                       */
+/* --------------------------------------------------------------*/
+
+body {
+    margin:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(21, 21, 21);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px; /* Ajoute une marge au-dessus du contenu pour éviter que le contenu ne soit masqué sous l'en-tête */
+   
+
+}
+
+/* --------------------------------------------------------------*/
+/* Entête                                                        */
+/* --------------------------------------------------------------*/
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    padding:10px;
+    color: rgb(29, 29, 29);
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    position: fixed; /* Fixe l'en-tête en haut de la fenêtre */
+    top: 0; /* Place l'en-tête au sommet de la fenêtre */
+    z-index: 1; /* Assure que l'en-tête est au-dessus du contenu de la page */
+    width: 100%;
+
+
+}
+
+h1 {
+    margin: 0;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.5) 2px 2px 1px;
+}
+
+/* --------------------------------------------------------------*/
+/* Champs de recherche de l'entête */
+/* --------------------------------------------------------------*/
+
+header input[type=text]{
+    border-width: 1px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    background-color: rgba(25,25,25,1);
+    min-width: 300px;
+}
+
+header label {
+  color: white;
+  margin-right: 5px;
+}
+
+/* --------------------------------------------------------------*/
+/* Footer  */
+/* --------------------------------------------------------------*/
+
+
+footer {
+  margin-top: auto;
+  height: 40px;
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-position: bottom;
+}
+
+footer p {
+  text-align: center;
+  color: white;
+  font-size: 0.8em;
+}
+
+
+
+
+/* ------------------------------------------------------*/
+/* list_videos correspond au Card des recettes           */
+/* ------------------------------------------------------*/
+#liste_videos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+/* Utilisé pour FIXER la largeur des images (vignettes)*/
+#liste_videos article {
+    margin: 10px;
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    height: max-content;
+    background-color: rgb(29, 29, 29);
+
+}
+/* Utilisé pour définir un block au dessus des vignettes pour mettre des infos */ 
+#liste_videos article div {
+    display: block;
+    position: relative;
+}
+
+#liste_videos article div p {
+    display: block;
+    margin: 0px;
+    position: absolute;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+#liste_videos article div p.date {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    top: 5px;
+    left: 5px
+}
+
+#liste_videos article div p.classification{
+    border-width: 0px;
+    border-color: rgba(180, 0, 0, 0.241);
+    color: rgb(180, 0, 0);
+    background-color: rgba(255,255,255, 0.8);
+    font-weight: bolder;
+    right:5px;
+    top:5px;
+}
+
+#liste_videos article div p.duree{
+    bottom: 5px;
+    right: 5px;
+    background-color:rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+/* Utilisé pour FIXER la hauteur des images (vignettes)*/
+#liste_videos article div .vignette{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px 5px 0px 0px;
+    position: flex; 
+    z-index: 1;
+}
+
+#liste_videos article a.boxvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;   
+    border-style: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: bold;
+    font-variant: small-caps;
+    min-width: 97%;
+    min-height: 96%;    
+    line-height: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.9em;
+}
+
+#liste_videos article a.boxvideo span {
+  font-size: 1em;
+  font-style: normal;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+#liste_videos article a.boxmodal{
+  position: absolute;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 0.8em;
+  bottom: 5px;
+  left: 5px;
+}
+
+
+#liste_videos article a.boxmodal em {
+  font-size: smaller;
+}
+
+
+
+#liste_videos article a:link, #liste_videos article a:visited {
+  color: rgb(0, 255, 179);
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.4) 5px 5px 5px;
+  text-decoration: none;
+}
+
+#liste_videos article a:hover {
+  cursor: pointer;
+  background-color: rgba(69, 69, 69, 0.462);
+  color: rgb(251, 255, 18);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 10px;
+
+}
+
+/* Utiliser pour la taille de la police des vignettes */ 
+#liste_videos article h2 {
+    color:white;
+    text-align: left;
+    padding: 0px 5px;
+    margin: 5px;
+    max-height: 2.5em;
+    min-height: 2.5em;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    font-size: 0.75em;
+
+    
+}
+
+#liste_videos article p.description {
+    max-height: 3.4em;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    padding: 5px;
+    margin: 0px;
+    min-height: 3.4em;
+    font-size: 0.85em;
+    border-radius: 4px;
+    color: white;
+}
+
+
+#liste_videos article p.auteur {
+    margin: 5px 5px 5px 0px;
+    color: aliceblue;
+    text-align: right;
+    font-style: italic;
+    max-height: 1em;
+    min-height: 1em;
+    
+}
+
+
+/* ------------------------------------------------------*/
+/* Encadré de la recette (Modal)                            */
+/* ------------------------------------------------------*/
+
+.myYboxClass{
+  border-radius:40px;
+  overflow:hidden;
+  width: 80%;
+}
+
+.closeYbox{
+	background:#000000;
+	background-size:100% 100%;
+	width:35px;
+	height:35px;
+	position:absolute;
+	top:20px;
+	right:40px;
+	margin:0;
+	padding:0;
+	border:none;
+	outline:none;
+	cursor:pointer;
+	z-index:3;
+  border-radius:40px;
+}
+
+.yBoxFrame{
+	background:#000000;
+	max-width:-webkit-calc(100% - 10px);
+	max-width:calc(100% - 10px);
+	max-height:-webkit-calc(100vh - 10px);
+	max-height:calc(100vh - 10px);
+	z-index:10001;
+	-webkit-transition:all 0.5s ease;
+	transition:all 0.5s ease;
+	-webkit-transform:translate(0,30px);
+	transform:translate(0,30px);
+}
+
+/* ------------------------------------------------------*/
+/* Détail de la recette*/
+/* ------------------------------------------------------*/
+
+.recetteModal {
+  background-color: rgb(0, 0, 0);
+  border-radius:20px;
+  color: #c3c3c3;
+}
+
+
+.recetteModal h2{
+  margin: 0px;
+  font-size: 3em;
+  min-height: 2.5em;
+  max-height: 2.5em;
+  overflow: auto;
+  scrollbar-width: thin;
+  padding: 0px;
+  width: calc(100% - 40px);
+  color: #ffffff;
+}
+
+.recetteModal table{
+  padding: 5px;
+}
+
+.separateur {
+  border-bottom: 1px solid rgb(175, 175, 175); 
+  padding-left: 15px; 
+}
+
+/* Apparance des puces intégrant les numéros des ingrédients et des étapes*/
+.badgeIngredient {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-size: 100%;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 10rem;
+  color: #000000;
+  background-color: #009e37;
+}
+.badgeEtape {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  font-size: 100%;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 10rem;
+  color: #000000;
+  background-color: #ffc107;
+}
+
+/* Utilisé pour faire des images de jauteur fixe pour l'entete du modal*/
+.div-parente {
+  width: 100%;
+  /* Définissez une hauteur pour la div parente si nécessaire */
+  height: 150px;
+  position: relative;
+  overflow: hidden; /* Cache tout contenu dépassant de la div parente */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.image-hauteur-fixe {
+  width: 100%; /* La largeur de l'image est de 100% de la largeur de la div parente */
+  height: 150px; /* Hauteur fixe de l'image */
+  object-fit: cover; /* Redimensionne l'image pour remplir la zone définie tout en conservant son ratio d'aspect */
+}
+
+
+
+/*
+[data-dismiss="modal"] {
+  cursor: pointer;
+}
+
+*/
